@@ -1,0 +1,5 @@
+1. messages when user 
+2a. bcrypt/jwt - 1 bonus
+2b. unit test - jest - 1 bonus
+3. comments 
+4. route - ul li list
