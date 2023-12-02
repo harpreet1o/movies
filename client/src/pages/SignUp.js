@@ -28,6 +28,8 @@ export default function SignUp() {
 
       console.log(response);
       if (response.data.status === "ok") {
+        alert("signup done");
+
         navigate(`/`);
       }
     } catch (error) {
