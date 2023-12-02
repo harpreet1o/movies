@@ -14,7 +14,7 @@ export default function Login() {
   async function submit(e) {
     e.preventDefault();
 
-    const response = await axios.post("http://localhost:3220/", {
+    const response = await axios.post("movies-alpha-ashen.vercel.app/", {
       email,
       password,
     });

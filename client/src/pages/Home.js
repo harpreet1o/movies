@@ -26,7 +26,9 @@ export default function App() {
   // Effect to fetch watched movies data from the server on component mount
   useEffect(() => {
     async function x() {
-      const response = await axios.get(`http://localhost:3220/home/${userId}`);
+      const response = await axios.get(
+        `movies-alpha-ashen.vercel.app/home/${userId}`
+      );
       console.log(response);
       const movies = response.data.movies;
       setWatched(movies);
@@ -37,9 +39,12 @@ export default function App() {
   // Effect to update the watched movies data on the server when 'watched' state changes
   useEffect(() => {
     async function x() {
-      const response = await axios.put(`http://localhost:3220/home/${userId}`, {
-        movies: watched,
-      });
+      const response = await axios.put(
+        `movies-alpha-ashen.vercel.app/home/${userId}`,
+        {
+          movies: watched,
+        }
+      );
       console.log(response);
     }
     x();

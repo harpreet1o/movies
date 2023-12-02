@@ -15,11 +15,14 @@ export default function SignUp() {
 
     console.log(password + "  " + Name + " " + email);
     try {
-      const response = await axios.post("http://localhost:3220/signUp", {
-        email: email,
-        password: password,
-        name: Name,
-      });
+      const response = await axios.post(
+        "movies-alpha-ashen.vercel.app/signUp",
+        {
+          email: email,
+          password: password,
+          name: Name,
+        }
+      );
 
       console.log(response);
       if (response.data.status === "ok") alert("signup done");
