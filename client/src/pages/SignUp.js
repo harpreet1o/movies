@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate, Link } from "react-router-dom";
+
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [Name, setName] = useState("");
@@ -25,7 +27,10 @@ export default function SignUp() {
       );
 
       console.log(response);
-      if (response.data.status === "ok") alert("signup done");
+      if (response.data.status === "ok") {
+        alert("signup done");
+        navigate(`/`);
+      }
     } catch (error) {
       alert(error.response.data.error);
       console.log(error);
