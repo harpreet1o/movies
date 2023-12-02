@@ -7,6 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [Name, setName] = useState("");
+  const [signUp, setsignUp] = useState("");
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [isvisible, setisvisible] = useState(false); // for the password click show
@@ -28,10 +29,12 @@ export default function SignUp() {
       console.log(response);
       if (response.data.status === "ok") {
         alert("signup done");
+        setsignUp("signup successful");
         navigate(`/`);
       }
     } catch (error) {
       alert(error.response.data.error);
+      setsignUp("Email already taken");
       console.log(error);
     }
   }
@@ -70,6 +73,9 @@ export default function SignUp() {
         <input type="submit" className="submit" />
       </form>
       <br />
+
+      <p>{signUp}</p>
+
       <p>or</p>
       <br />
       <Link className="link" to="/">
