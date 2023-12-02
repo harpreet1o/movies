@@ -1,6 +1,29 @@
+
+The header has to be its own key for specifying access-control-allow-origin and "routes" will need to be replaced with "rewrite" as header and route keys don't go together. And If there are few different domains for your app, header object needs to be duplicated within the outer header array for each domain for access control origin issue. https://vercel.com/docs/project-configuration Eg:
+
 {
-  "version": 2,
-  "name": "music-album",
-  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/app.js" }]
-}
+    "version": 2,
+    "builds": [
+        {
+            "src": "./index.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "rewrites": [
+        { "source": "/(.*)", "destination": "src/app.js" }
+    ],
+    "headers": [
+        {
+          "source": "/(.*)",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" }
+          ]
+        },
+        {
+          "source": "/vercel_app_domain_name/(.*)",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" }
+          ]
+        }  
+    ]
+  }
