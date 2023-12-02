@@ -16,7 +16,7 @@ export default function SignUp() {
     console.log(password + "  " + Name + " " + email);
     try {
       const response = await axios.post(
-        "movies-alpha-ashen.vercel.app/signUp",
+        "https://moviesbackendd.onrender.com/signUp",
         {
           email: email,
           password: password,

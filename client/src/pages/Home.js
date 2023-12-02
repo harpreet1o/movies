@@ -27,7 +27,7 @@ export default function App() {
   useEffect(() => {
     async function x() {
       const response = await axios.get(
-        `movies-alpha-ashen.vercel.app/home/${userId}`
+        `https://moviesbackendd.onrender.com/home/${userId}`
       );
       console.log(response);
       const movies = response.data.movies;
@@ -40,7 +40,7 @@ export default function App() {
   useEffect(() => {
     async function x() {
       const response = await axios.put(
-        `movies-alpha-ashen.vercel.app/home/${userId}`,
+        `https://moviesbackendd.onrender.com/home/${userId}`,
         {
           movies: watched,
         }
