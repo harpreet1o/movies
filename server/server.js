@@ -18,6 +18,6 @@ app.use(cors());
 // To convert the data to json
 app.use(express.json());
 //To give routes
-app.use("", users);
+app.use("/", users);
 
 app.listen(3220, () => console.log("server started"));
