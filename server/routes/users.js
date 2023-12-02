@@ -41,7 +41,7 @@ router.post("/signUp", async (req, res) => {
 
 // for the Login page which is also the default page retruns user id aswell
 
-router.post("", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
 
