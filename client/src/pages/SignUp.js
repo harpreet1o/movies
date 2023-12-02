@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [Name, setName] = useState("");
-
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [isvisible, setisvisible] = useState(false); // for the password click show
 
