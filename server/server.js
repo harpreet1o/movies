@@ -20,4 +20,4 @@ app.use(express.json());
 //To give routes
 app.use("/", users);
 
-app.listen(3220, () => console.log("server started"));
+app.listen(3120, () => console.log("server started"));
