@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate, Link } from "react-router-dom";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
